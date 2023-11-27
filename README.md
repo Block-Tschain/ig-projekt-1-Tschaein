@@ -43,7 +43,7 @@ Please make sure to also add Gits installation path ```[installationPath]\git```
 
 ## Installation
 
-If you have installed Git feel free to <a href="git-installed">skip</a> this next part, else please use the following link to download our Sourcecode from Github
+If you have installed Git feel free to skip this next part and go to "Git Installed", else please use the following link to download our Sourcecode from Github
 	- https://github.com/Block-Tschain/ig-projekt-1-Tschaein/archive/refs/heads/main.zip
 
 Navigate to the downloaded file and unpack it
@@ -51,8 +51,6 @@ Navigate to the downloaded file and unpack it
 tar -xf ig-projekt-1-Tschaein-main.zip
 ```
 Then navigate to the unpacked folder
-
-<a name="git-installed"></a>
 
 ### Git installed
 Navigate to a Directory of your choice, then enter the following command in your terminal
