@@ -1,6 +1,6 @@
 import json
 
-json_file = open('videos/results.json')
+json_file = open('../videos/results.json')
 rawData = json.load(json_file)
 
 postProcessingDate = str(rawData["day"])
@@ -161,7 +161,7 @@ exercise_statistics = {
 
 json_object = json.dumps(exercise_statistics, indent=4)
 
-with open("videos/statistics.json", "w") as outfile:
+with open("../videos/statistics.json", "w") as outfile:
     outfile.write(json_object)
 
 

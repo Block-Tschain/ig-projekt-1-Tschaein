@@ -6,3 +6,4 @@ echo "Running inference on videos..."
 VID_STRIDE=48
 python detect.py --weights ../models/various_detection_colab_100ep.pt --source ../videos --vid-stride $VID_STRIDE --save-csv
 python ../process_predictions.py $VID_STRIDE
+python ../processing_rawdata.py
