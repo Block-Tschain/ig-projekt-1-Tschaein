@@ -1,5 +1,8 @@
 # ig-projekt-1-Tschaein
 
+This program was created to evaluate videos of people using the so-called Tension-Terminator equipped with a MV-Camera.
+Our aim was to use a machine-learning model based on the YOLO model to label and detect certain objects and evaluate what kind of exercise is being performed, either using a so-called trigger or duoballs to relieve back and shoulder tension/pain.
+
 ## Prerequisites
 1. Python 3.11
 2. Git (optional)
@@ -60,15 +63,15 @@ git clone https://github.com/Block-Tschain/ig-projekt-1-Tschaein.git
 
 ## Add Videos for evaluation and Run the program
 Add your videos to the videos folder located in the programs root directory.
-Please make sure they are encoded in ...
-
-Once that is done, navigate to the programs root directory once more and execute the ```trigger_detection.sh``` script.
-This will automatically download and install the necessary remaining requirements and evaluate the videos once ready.
-The raw data from the evaluation can be found in the results.json file inside the videos folder.
-Further evaluation of this data can be found in \*.json in the root directory.
+Please make sure they are encoded in the following formats .asf, .avi, .gif, .m4v, .mkv, .mov, .mp4, .mpeg, .mpg, .ts, .wmv
+Theoretically the MLM can also evaluate images encoded in the following formats: .bmp, .dng, .jpeg, .jpg, .mpo, .png, .tif, .tiff, .webp, .pfm
 
 ## How to detect Trigger Exercises?
-Put the videos you want to classify inside the videos folder, then call `trigger_detection.sh`. Right now it will output whether the exercises user the trigger or not right there in terminal.
+Put the videos you want to classify inside the videos folder, then call `trigger_detection.sh`. 
+
+This will automatically download and install the necessary remaining requirements and evaluate the videos once ready.
+The raw data from the evaluation can be found in the results.json file inside the videos folder.
+Further evaluation of this data can be found in statistics.json also located in the video directory.
 
 ## how can I fine-tune a YOLO Model to detect custom classes (e.g. different people)?
 
