@@ -63,8 +63,9 @@ git clone https://github.com/Block-Tschain/ig-projekt-1-Tschaein.git
 
 ## Add Videos for evaluation and Run the program
 Add your videos to the videos folder located in the programs root directory.
-Please make sure they are encoded in the following formats .asf, .avi, .gif, .m4v, .mkv, .mov, .mp4, .mpeg, .mpg, .ts, .wmv
-Theoretically the MLM can also evaluate images encoded in the following formats: .bmp, .dng, .jpeg, .jpg, .mpo, .png, .tif, .tiff, .webp, .pfm
+Please make sure they are encoded in the following formats `.asf`, `.avi`, `.gif`, `.m4v`, `.mkv`, `.mov`, `.mp4`, `.mpeg`, `.mpg`, `.ts`, `.wmv`
+
+Theoretically the MLM can also evaluate images encoded in the following formats: `.bmp`, `.dng`, `.jpeg`, `.jpg`, `.mpo`, `.png`, `.tif`, `.tiff`, `.webp`, `.pfm`
 
 ## How to detect Trigger Exercises?
 Put the videos you want to classify inside the videos folder, then call `trigger_detection.sh`. 
