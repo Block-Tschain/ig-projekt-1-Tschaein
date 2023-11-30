@@ -24,16 +24,52 @@ for video in df["video"].unique():
     fps = cap.get(cv2.CAP_PROP_FPS)
     duration = float(length)/fps
     total_duration += duration
-    total_frames = length/stride
+    
+    if stride > 0:
+        evaluated_frames = length/stride
+    else:
+        evaluated_frames = 0
+    
     # Get trigger frames
-    trigger_frames = df[(df["video"]==video) & (df["class"] == "Triggerpointlever")].count()["video"]
-    trigger_ratio = trigger_frames/total_frames
+    if evaluated_frames > 0:
+        trigger_frames = df[(df["video"] == video) & (df["class"] == "Triggerpointlever") & (df["confidence"] > 0.65)].count()["video"]
+        trigger_ratio = trigger_frames/evaluated_frames
+        
+        # Getting Confidence Levels
+        total_trigger_frames = df[(df["video"] == video) & (df["class"] == "Triggerpointlever")].count()["video"]
+        total_trigger_confidence = df[(df["video"] == video) & (df["class"] == "Triggerpointlever")].sum()["confidence"]
+        if total_trigger_frames > 0:
+            mean_trigger_confidence = (total_trigger_confidence/total_trigger_frames) * 100
+        else:
+            mean_trigger_confidence = 0
 
-    duoballs_frames = df[(df["video"]==video) & (df["class"] == "Duoballs")].count()["video"]
-    duoballs_ratio = duoballs_frames/total_frames
+        duoballs_frames = df[(df["video"] == video) & (df["class"] == "Duoballs") & (df["confidence"] > 0.85)].count()["video"]
+        duoballs_ratio = duoballs_frames/evaluated_frames
 
-    head_frames = df[(df["video"]==video) & (df["class"] == "Head")].count()["video"]
-    head_ratio = head_frames/total_frames
+        # Getting Confidence Levels
+        total_duoballs_frames = df[(df["video"] == video) & (df["class"] == "Duoballs")].count()["video"]
+        total_duoballs_confidence = df[(df["video"] == video) & (df["class"] == "Duoballs")].sum()["confidence"]
+        if total_duoballs_frames > 0:
+            mean_duoballs_confidence = (total_duoballs_confidence/total_duoballs_frames) * 100
+        else:
+            mean_duoballs_confidence = 0
+
+        head_frames = df[(df["video"] == video) & (df["class"] == "Head") & (df["confidence"] > 0.75)].count()["video"]
+        head_ratio = head_frames/evaluated_frames
+
+        # Getting Confidence Levels
+        total_head_frames = df[(df["video"] == video) & (df["class"] == "Head")].count()["video"]
+        total_head_confidence = df[(df["video"] == video) & (df["class"] == "Head")].sum()["confidence"]
+        if total_head_frames > 0:
+            mean_head_confidence = (total_head_confidence/total_head_frames) * 100
+        else:
+            mean_head_confidence = 0
+
+    else:
+        trigger_ratio = 0
+        duoballs_ratio = 0
+        head_ratio = 0
+    
 
     # If more than half of the frames we looked at had a trigger, then it's a trigger exercise
     if trigger_ratio > 0.5:
@@ -49,9 +85,13 @@ for video in df["video"].unique():
         "hasDuoballs": hasDuoballs,
         "hasPerson": hasPerson,
         "total_frames": length,
+        "evaluated_frames": evaluated_frames,
         "trigger_ratio": float(trigger_ratio),
+        "mean_trigger_confidence": int(mean_trigger_confidence),
         "duoballs_ratio": float(duoballs_ratio),
+        "mean_duoballs_confidence": int(mean_duoballs_confidence),
         "head_ratio": float(head_ratio),
+        "mean_head_confidence": int(mean_head_confidence),
         "duration": duration
     }
     
