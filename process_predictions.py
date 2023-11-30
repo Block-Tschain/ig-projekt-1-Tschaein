@@ -43,7 +43,7 @@ for video in df["video"].unique():
         else:
             mean_trigger_confidence = 0
 
-        duoballs_frames = df[(df["video"] == video) & (df["class"] == "Duoballs") & (df["confidence"] > 0.65)].count()["video"]
+        duoballs_frames = df[(df["video"] == video) & (df["class"] == "Duoballs") & (df["confidence"] > 0.85)].count()["video"]
         duoballs_ratio = duoballs_frames/evaluated_frames
 
         # Getting Confidence Levels
@@ -54,7 +54,7 @@ for video in df["video"].unique():
         else:
             mean_duoballs_confidence = 0
 
-        head_frames = df[(df["video"] == video) & (df["class"] == "Head") & (df["confidence"] > 0.65)].count()["video"]
+        head_frames = df[(df["video"] == video) & (df["class"] == "Head") & (df["confidence"] > 0.75)].count()["video"]
         head_ratio = head_frames/evaluated_frames
 
         # Getting Confidence Levels
