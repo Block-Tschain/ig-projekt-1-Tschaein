@@ -70,8 +70,8 @@ Theoretically the MLM can also evaluate images encoded in the following formats:
 Put the videos you want to classify inside the videos folder, then call `trigger_detection.sh`. 
 
 This will automatically download and install the necessary remaining requirements and evaluate the videos once ready.
-The raw data from the evaluation can be found in the results.json file inside the videos folder.
-Further evaluation of this data can be found in statistics.json also located in the video directory.
+The raw data from the evaluation can be found in the `results.json` file inside the videos folder.
+Further evaluation of this data can be found in `statistics.json` also located in the video directory.
 
 ## how can I fine-tune a YOLO Model to detect custom classes (e.g. different people)?
 
