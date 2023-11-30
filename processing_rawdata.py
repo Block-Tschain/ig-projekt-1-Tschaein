@@ -25,36 +25,16 @@ for video in rawData["videos"]:
     videoDetails['duration'] = video['duration']
     videos.append(videoDetails)
 
-## initial Test for JSON-Parsing
-## print(videos)
 
 exercisesCounter = 0
-##if hasPerson is true && duration > 5
-
 totalExercisesDuration = 0
-##if counts_as_exercise
-
 meanExercisesDuration = 0
-##double(totalExercisesDuration / exercisesCounter)
-
 maxDurationExercise = maxDuration
-
 minDurationExercise = maxDuration
-##if counts_as_exercise && duration < minDuration -> minDuration = duration
-
 triggerExercisesCounter = 0
-##if hasTrigger is true
-
 duoBallExercisesCounter = 0
-##if hasTrigger is false && hasPerson is true
-
 triggerExercises = []
-##duration of trigger exercises
-##if is_trigger_exercise -> triggerExercises.append(duration)
-
 duoBallsExercises = []
-##duration of duoBalls exercises
-# if is_duoBalls_exercise -> duoBallsExercises.append(duration)
 
 ## not yet implentable due to missing individual-person detection
 ## total amount of individuals performing exercises
@@ -63,7 +43,6 @@ duoBallsExercises = []
 ## total amount of exercises performed by individual
 ## duration of session per individual
 
-## do we even need these?
 totalTriggerDuration = 0
 minTriggerDuration = maxDuration
 maxTriggerDuration = 0
@@ -74,7 +53,7 @@ minDuoBallsDuration = maxDuration
 maxDuoBallsDuration = 0
 meanDuoBallsDuration = 0
 
-## now to run the evaluation
+## This is where the evaluation 'magic' happens for all Videos ;)
 for video in videos:
     videoDetails = {"video":None, "hasTrigger":None, "hasDuoballs":None,"hasPerson":None, "total_frames":None, "trigger_ratio":None, "duoballs_ratio":None, "head_ratio":None, "duration":None}
     videoDetailsReduced = {"video":None, "duration":None}
@@ -90,13 +69,16 @@ for video in videos:
     videoDetails['duration'] = video['duration']
     videoDetailsReduced['duration'] = video['duration']
 
+    ## Check if Person was detected and disregard videos shorter than 5 seconds
     if videoDetails['hasPerson'] is True and float(videoDetails['duration']) > 5:
         exercisesCounter += 1
         totalExercisesDuration += float(videoDetails['duration'])
         
+        ## Check for Minimum Duration of all Videos
         if float(videoDetails['duration']) < minDurationExercise:
             minDurationExercise = float(videoDetails['duration'])
         
+        ## Check for Trigger Exercise and run all relevant evaluations
         if videoDetails['hasTrigger'] is True:
             triggerExercisesCounter += 1
             totalTriggerDuration += float(videoDetails['duration'])
@@ -106,6 +88,7 @@ for video in videos:
             if float(videoDetails['duration']) > maxTriggerDuration:
                 maxTriggerDuration = float(videoDetails['duration'])
 
+        ## Check for DuoBall Exercise and run all relevant evaluations
         if videoDetails['hasDuoballs'] is True and videoDetails['hasTrigger'] is False:
             duoBallExercisesCounter += 1
             totalDuoBallsDuration += float(videoDetails['duration'])
@@ -115,7 +98,7 @@ for video in videos:
             if float(videoDetails['duration']) > maxDuoBallsDuration:
                 maxDuoBallsDuration = float(videoDetails['duration'])
 
-
+## General Data evaluation (no 'for' Loop needed)
 if exercisesCounter > 0:
     meanExercisesDuration = float(totalExercisesDuration / exercisesCounter)
 else:
@@ -131,7 +114,7 @@ if duoBallExercisesCounter > 0:
 else:
     meanDuoBallsDuration = 0
 
-## prepare statistics for JSON dump
+## Serialize statistics and write to JSON File
 exercise_statistics = {
     "General-Exercise-Statistics": {
         "Processing-Date": postProcessingDate,
@@ -163,6 +146,3 @@ json_object = json.dumps(exercise_statistics, indent=4)
 
 with open("../videos/statistics.json", "w") as outfile:
     outfile.write(json_object)
-
-
-
