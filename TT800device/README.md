@@ -51,8 +51,9 @@ python3 TT800run.py -fast
 
 ![cumulative object counting](../docufiles/screenshot_tt800run_2.png)
 
-#
-#
+###
+###
+
 ## TTmodeltest Python Script for Device
 
 This Python script demonstrates the use of the DepthAI SDK to operate different self-trained YOLO neural networks for spatial detection. It allows for dynamic selection of YOLO models (both YOLO 5 and YOLO 8 variants) with different configurations (small or medium, and varying image resolutions) based on command-line arguments. 
