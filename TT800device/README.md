@@ -1,16 +1,15 @@
 # TT800 Device Module
 
-## Python for Device
+## TT800run Python Script for Device
 
 This Python script 'TT800run.py' is the implementation for the Tension Terminator OfficePro running on a device, which is connected with the OAK-D camera. It leverages DepthAI SDK for spatial detection and operates with an EasyGUI interface on compatible devices. The script is structured to provide a comprehensive solution for exercise monitoring and data collection. 
 
-![cumulative object counting](../docufiles/screenshot_tt800run.png)
-
+### To run the script, execute the following command in the terminal:
 ```
-python3 TT800run.py
+python3 TT800run.py -fast
 ```
 
-Below is a detailed breakdown of its functionalities:
+### Detailed breakdown of functionalities:
 
 1. **Library Import and Global Variable Initialization**: 
    - The script begins by importing necessary libraries such as `os`, `sys`, `json`, `cv2`, `numpy`, `pathlib.Path`, and various DepthAI SDK components.
@@ -46,4 +45,23 @@ Below is a detailed breakdown of its functionalities:
    - The script starts the camera in blocking mode, meaning it will continuously capture and process video frames until manually stopped.
    - Visual output is displayed using OpenCV, with options for resizing the frame for better visibility.
 
+
+### Screenshots of the output of the TT800run.py script
+![cumulative object counting](../docufiles/screenshot_tt800run.png)
+
 ![cumulative object counting](../docufiles/screenshot_tt800run_2.png)
+
+#
+#
+## TTmodeltest Python Script for Device
+
+This Python script demonstrates the use of the DepthAI SDK to operate different self-trained YOLO neural networks for spatial detection. It allows for dynamic selection of YOLO models (both YOLO 5 and YOLO 8 variants) with different configurations (small or medium, and varying image resolutions) based on command-line arguments. 
+The main loop initializes the OakCamera, sets up a color camera and neural network based on the selected model, and starts live spatial detection, visualizing the neural network output. The script's continuous loop allows for ongoing detection, making it suitable for real-time spatial analysis in various applications.
+
+### To run the script, execute the following command in the terminal:
+```
+python3 TTmodeltest.py -1
+```
+
+### Screenshot of the output of the TTmodeltest.py script
+![cumulative object counting](../docufiles/screenshot_ttmodeltest.png)
