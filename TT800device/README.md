@@ -6,6 +6,10 @@ This Python script 'TT800run.py' is the implementation for the Tension Terminato
 
 ![cumulative object counting](../docufiles/screenshot_tt800run.png)
 
+```
+python3 TT800run.py
+```
+
 Below is a detailed breakdown of its functionalities:
 
 1. **Library Import and Global Variable Initialization**: 
@@ -41,3 +45,5 @@ Below is a detailed breakdown of its functionalities:
 8. **Camera Execution and Display**:
    - The script starts the camera in blocking mode, meaning it will continuously capture and process video frames until manually stopped.
    - Visual output is displayed using OpenCV, with options for resizing the frame for better visibility.
+
+![cumulative object counting](../docufiles/screenshot_tt800run_2.png)
