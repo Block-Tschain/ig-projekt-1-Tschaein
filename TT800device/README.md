@@ -2,7 +2,11 @@
 
 ## Python for Device
 
-This Python script 'TT800run.py' is the implementation for the Tension Terminator OfficePro running on a device, which is connected with the OAK-D camera. It leverages DepthAI SDK for spatial detection and operates with an EasyGUI interface on compatible devices. The script is structured to provide a comprehensive solution for exercise monitoring and data collection. Below is a detailed breakdown of its functionalities:
+This Python script 'TT800run.py' is the implementation for the Tension Terminator OfficePro running on a device, which is connected with the OAK-D camera. It leverages DepthAI SDK for spatial detection and operates with an EasyGUI interface on compatible devices. The script is structured to provide a comprehensive solution for exercise monitoring and data collection. 
+
+![cumulative object counting](..\docufiles\screenshot_tt800run.png.PNG)
+
+Below is a detailed breakdown of its functionalities:
 
 1. **Library Import and Global Variable Initialization**: 
    - The script begins by importing necessary libraries such as `os`, `sys`, `json`, `cv2`, `numpy`, `pathlib.Path`, and various DepthAI SDK components.
