@@ -1,4 +1,5 @@
 .DS_Store
+.idea/
 yolov5/
 videos_temp/
 /TT800trainNN/traindata/
