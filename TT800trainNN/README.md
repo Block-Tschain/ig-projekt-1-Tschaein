@@ -40,6 +40,12 @@ The Notebook is structured very similar to the Yolo V5 Colab Notebook above.
 
 ### framegrabber2.py
 This Python script, designed for the TensionTerminator project, automates the process of extracting frames from video files at specific percentages (5%, 25%, 50%, 75%, and 95%) of their total duration. It leverages OpenCV for video processing, capturing and saving selected frames as PNG files in a dynamically created output directory named using the current timestamp. The script processes all MP4 video files containing 'rgb' in their name, found in the specified `rawdata` directory, and provides a summary of the total number of videos processed and frames captured. This efficient frame extraction tool aids in gathering diverse data samples for training machine learning models, especially in image processing tasks.
+```
+python3 framegrabber2.py
+```
 
 ### framegrabber.py
-Similar to framegrabber2.py, but this Python script captures frames every two seconds, starting after 5% and ending before 95% of each video's duration to focus on the most relevant content. 
+Similar to framegrabber2.py, but this Python script captures frames every two seconds, starting after 5% and ending before 95% of each video's duration to focus on the most relevant content.
+```
+python3 framegrabber.py
+```
