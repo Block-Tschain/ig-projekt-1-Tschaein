@@ -35,6 +35,8 @@ The **trainTTyolo8.ipynb** Colab Notebook is implementing transfer learning for 
 
 The Notebook is structured very similar to the Yolo V5 Colab Notebook above.
 
+#
+#
 
 ## Framegrabbers
 
