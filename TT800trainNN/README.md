@@ -1,4 +1,8 @@
-## Notebook for transfer learning of a YoloV5 model
+# TT800 Train Neural Network
+
+## Google Colab Notebooks
+
+### Notebook for transfer learning of a YoloV5 model
 
 The **trainTTyolo5.ipynb** Colab Notebook is implementing transfer learning for the **Tension Terminator** based on the **YOLOv5** model. 
 
@@ -25,8 +29,17 @@ The file is structured to guide the user through the entire process, starting fr
 10. **File Naming and Google Drive Backup**: The notebook timestamps and renames the extracted weights for clarity and copies them to the mounted Google Drive for safekeeping. This step is crucial for version control and future references.
 
 
-## Notebook for transfer learning of a YoloV8 model
+### Notebook for transfer learning of a YoloV8 model
 
 The **trainTTyolo8.ipynb** Colab Notebook is implementing transfer learning for the **Tension Terminator** based on the **YOLOv8** model.
 
-The Notebook is structured very similar to the Yolo V5 Colab Notebook.
+The Notebook is structured very similar to the Yolo V5 Colab Notebook above.
+
+
+## Framegrabbers
+
+### framegrabber2.py
+This Python script, designed for the TensionTerminator project, automates the process of extracting frames from video files at specific percentages (5%, 25%, 50%, 75%, and 95%) of their total duration. It leverages OpenCV for video processing, capturing and saving selected frames as PNG files in a dynamically created output directory named using the current timestamp. The script processes all MP4 video files containing 'rgb' in their name, found in the specified `rawdata` directory, and provides a summary of the total number of videos processed and frames captured. This efficient frame extraction tool aids in gathering diverse data samples for training machine learning models, especially in image processing tasks.
+
+### framegrabber.py
+Similar to framegrabber2.py, but this Python script captures frames every two seconds, starting after 5% and ending before 95% of each video's duration to focus on the most relevant content. 
