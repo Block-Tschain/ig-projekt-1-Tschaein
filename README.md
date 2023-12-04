@@ -74,6 +74,12 @@ This will automatically download and install the necessary remaining requirement
 The raw data from the evaluation can be found in the `results.json` file inside the videos folder.
 Further evaluation of this data can be found in `statistics.json` also located in the video directory.
 
+## Application Parameters
+### Stride
+In our Script ```trigger_detection.sh``` there is a variable called ```VID_STRIDE```. With this one can set the interval in frames, which shall be analyzed and evaluated in our program. 
+- Setting a higher stride will result in faster program execution, but with less frames/images evaluated per video and possibly lowering detection accuracy.
+- Setting a lower stride will result in (quite considerably) slower program execution, but will increase the accuracy of the object detection per video
+
 ## how can I fine-tune a YOLO Model to detect custom classes (e.g. different people)?
 
 This is documented in the `Yolo_fine_tune.ipynb` Jupyter Notebook. There's a Link at the top which has the neccessary information
