@@ -87,4 +87,3 @@ This is documented in the `Yolo_fine_tune.ipynb` Jupyter Notebook. There's a Lin
 Further Reading:
 - [TT800device README](/TT800device/README.md)
 - [TT800trainNN README](/TT800trainNN/README.md)
-- [YOLO5 README](/yolov5/README.md)
