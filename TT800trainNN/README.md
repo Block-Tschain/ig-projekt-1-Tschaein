@@ -16,7 +16,7 @@ The file is structured to guide the user through the entire process, starting fr
 
 4. **Dependency Installation**: Additional dependencies, like Roboflow, are installed to facilitate the data handling and model training process.
 
-5. **Data Loading from Roboflow**: The notebook utilizes Roboflow, a service for managing and preprocessing datasets for machine learning, to load the required data for the project. It uses a secret key for secure access to the dataset.
+5. **Data Loading from Roboflow**: The notebook utilizes Roboflow, a service for managing and preprocessing datasets for machine learning, to load the required data for the project. It uses a secret key for secure access to the dataset. You can also use your own dataset by uploading it to Google Drive and changing the data path in the `data.yaml` file.
 
 6. **Data Path Corrections**: The paths in the `data.yaml` file are corrected to ensure they point to the appropriate directories within the notebook environment. This step is critical for seamless training and validation processes.
 

@@ -1,5 +1,34 @@
 # TT800 Device Module
 
+## Preconditions
+
+### OAK-D Lite
+
+We tested our code on a OAK-D Lite device connected to the host via USB. Host was Windows 11.
+The OAK-D Lite is a USB-powered spatial AI camera system with a RGB camera, 2 Mono cameras and a Myriad X VPU. The OAK-D Lite is also compatible with the Raspberry Pi.
+- [OAK-D Lite](https://shop.luxonis.com/products/oak-d-lite-1)
+
+### DepthAI
+
+You have to install the DepthAI SDK on your device. The DepthAI SDK is a Python library that enables you to easily access the DepthAI hardware. It provides a Python API for configuring and interacting with the DepthAI hardware, including the OAK-D camera. The DepthAI SDK also includes a set of functions for our pre-trained neural network models for object detection and spatial detection.
+
+#### Linux and macOS (incl. Raspberry PI)
+To install the DepthAI SDK on Linux and macOS, use the following pip command:
+```
+python3 -m pip install depthai-sdk
+```
+
+#### Windows
+For Windows, the DepthAI SDK can be installed via pip as follows:
+```
+py -m pip install depthai-sdk
+```
+
+### References
+- [DepthAI Documentation](https://docs.luxonis.com/en/latest/)
+- [DepthAI SDK Docs](https://docs.luxonis.com/projects/sdk/en/latest/quickstart/#installation)
+
+
 ## TT800run Python Script for Device
 
 This Python script 'TT800run.py' is the implementation for the Tension Terminator OfficePro running on a device, which is connected with the OAK-D camera. It leverages DepthAI SDK for spatial detection and operates with an EasyGUI interface on compatible devices. The script is structured to provide a comprehensive solution for exercise monitoring and data collection. 
