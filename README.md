@@ -83,7 +83,6 @@ In our Script ```trigger_detection.sh``` there is a variable called ```VID_STRID
 ## how can I fine-tune a YOLO Model to detect custom classes (e.g. different people)?
 This is documented in the `Yolo_fine_tune.ipynb` Jupyter Notebook. There's a Link at the top which has the neccessary information
 
-##
-Further Reading:
+# Further instructions in the modules under
 - [TT800device README](/TT800device/README.md)
 - [TT800trainNN README](/TT800trainNN/README.md)
